@@ -19,7 +19,7 @@ namespace Clase7.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,7 @@ namespace Clase7.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-LR8KJAR\SQLEXPRESS;Initial Catalog=C8PUB;Integrated Security=True.
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-7HF6F66\SQLSERVERLOCAL;Initial Catalog=redSocial;Integrated Security=True.
         /// </summary>
         internal static string ConnectionString {
             get {

@@ -32,6 +32,9 @@ namespace Clase7
         public DateTime fecha { get; set; }
 
         private static int ultimoValor = 1;
+
+        public Post() { }
+
         public Post(int id, Usuario usuario, String contenido, DateTime fecha)
         {
             this.idPost = id;

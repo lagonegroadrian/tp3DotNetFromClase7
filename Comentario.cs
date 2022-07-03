@@ -20,6 +20,8 @@ namespace Clase7
 
         public List<Usuario> usuarios;
 
+        public Comentario() { }
+
         private static int ultimoValor = 1;
         public Comentario(Post post, Usuario usuario, String contenido, DateTime fecha)
         {

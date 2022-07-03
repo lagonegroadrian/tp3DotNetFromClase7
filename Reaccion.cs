@@ -16,6 +16,9 @@ namespace Clase7
         public Usuario usuario { get; set; }
 
         private static int ultimoValor = 1;
+
+        public Reaccion() { }
+
         public Reaccion(String tipo, Post post, Usuario usuario)
         {
             this.id = Contador();

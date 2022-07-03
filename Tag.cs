@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Clase7
 {
+
     public class Tag
     {
         public int id;
         public string palabras;
         public List<Post> posts;
+
+        public Tag(){}
     }
 }
