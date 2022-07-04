@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
-
+using System.Data.SqlClient; //para no tener que usar referencias usamos también este
+//así no tienes que estar colocando   el "namespace"
 
 namespace Clase7
 {
@@ -29,7 +29,7 @@ namespace Clase7
 
         private static int ultimoValor = 1;
 
-        public Usuario() { }
+        public Usuario() { } //constuctor vació que necesita EF para funcionar
 
         //public Usuario(int _dni, String _nombre, String _apellido, String _mail, String _password)
         public Usuario(int _dni, string _nombre, string _apellido, string _mail, string _password, bool _bloqueado, bool esADM)

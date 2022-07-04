@@ -10,8 +10,10 @@ namespace Clase7
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Post> posts { get; set; }
         public DbSet<Comentario> comentarios { get; set; }
+        public DbSet<Tag> tags { get; set; }
+        public DbSet<Reaccion> reacciones { get; set; }
 
-        //falta REACCIONES y tags
+        //Agregadas Reacciones y tags en los DbSet
 
         public MyContext() { }
 
@@ -28,7 +30,12 @@ namespace Clase7
 
             //==================== RELACIONES============================
             //DEFINICIÓN DE LA RELACIÓN ONE TO ONE USUARIO -> DNI
-            
+         /*    modelBuilder.Entity<dni o DNI>()
+            .HasOne(P => P.usuario)
+            .WithMany(U => U.posts)
+            .HasForeignKey(P => P.idUsuario)
+            .OnDelete(DeleteBehavior.Cascade);
+         */
 
             //DEFINICIÓN DE LA RELACIÓN ONE TO MANY USUARIO -> POST
             modelBuilder.Entity<Post>()

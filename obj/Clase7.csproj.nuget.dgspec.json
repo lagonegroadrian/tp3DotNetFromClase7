@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nestor\\Documents\\1-Clases\\.net\\____temp\\Clase8 Relaciones\\Clase7.csproj": {}
+    "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 4\\Plataformas de Desarrollo\\TP_Final\\Clase7.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nestor\\Documents\\1-Clases\\.net\\____temp\\Clase8 Relaciones\\Clase7.csproj": {
+    "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 4\\Plataformas de Desarrollo\\TP_Final\\Clase7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nestor\\Documents\\1-Clases\\.net\\____temp\\Clase8 Relaciones\\Clase7.csproj",
+        "projectUniqueName": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 4\\Plataformas de Desarrollo\\TP_Final\\Clase7.csproj",
         "projectName": "Clase7",
-        "projectPath": "C:\\Users\\Nestor\\Documents\\1-Clases\\.net\\____temp\\Clase8 Relaciones\\Clase7.csproj",
-        "packagesPath": "C:\\Users\\Nestor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nestor\\Documents\\1-Clases\\.net\\____temp\\Clase8 Relaciones\\obj\\",
+        "projectPath": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 4\\Plataformas de Desarrollo\\TP_Final\\Clase7.csproj",
+        "packagesPath": "C:\\Users\\SRV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SRV\\Desktop\\DaVinci\\Cuatrimestre 4\\Plataformas de Desarrollo\\TP_Final\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nestor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\SRV\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             }
           },
           "imports": [
@@ -69,6 +69,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.26, 3.1.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
