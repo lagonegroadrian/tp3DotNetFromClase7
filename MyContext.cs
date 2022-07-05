@@ -59,8 +59,33 @@ namespace Clase7
             .OnDelete(DeleteBehavior.Cascade);
 
             //FALTAN LAS RELACIONES DE TAGS Y REACCIONES Y AMIGOS
+            //DEFINICIÓN DE LA RELACIÓN ONE TO MANY comentario-> tags
+            modelBuilder.Entity<Tag>()
+            .HasOne(P => P.Comentario)
+            .WithMany(U => U.Tags)
+            .HasForeignKey(P => P.Comentario)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            //DEFINICIÓN DE LA RELACIÓN ONE TO MANY comentario-> reaccion
+            modelBuilder.Entity<Reaccion>()
+            .HasOne(P => P.Comentario)
+            .WithMany(U => U.Reacciones)
+            .HasForeignKey(P => P.Comentario)
+            .OnDelete(DeleteBehavior.Cascade);
 
 
+            //relacion many to many usuario ->amigos
+            modelBuilder.Entity<UsuarioAmigo>()
+                .HasOne(UA => UA.user)
+                .WithMany(U => U.misAmigos)
+                .HasForeignKey(u => u.num_usr)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<UsuarioAmigo>()
+                .HasOne(UA => UA.amigo)
+                .WithMany(U => U.amigosMios)
+                .HasForeignKey(u => u.num_usr2)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<UsuarioAmigo>().HasKey(k => new { k.num_usr, k.num_usr2 });
 
             //propiedades de los datos
             //faltan del resto de las clases, usuario NO está completa

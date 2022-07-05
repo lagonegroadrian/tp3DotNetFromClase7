@@ -23,6 +23,11 @@ namespace Clase7
         public Comentario() { }
 
         private static int ultimoValor = 1;
+        public List <Tag> Tags { get; set; }
+        public int TagForeignKey { get; set; }
+
+        public List<Reaccion> Reacciones { get; set; }
+        public int ReaccionForeignKey { get; set; }
         public Comentario(Post post, Usuario usuario, String contenido, DateTime fecha)
         {
             this.id = Contador();

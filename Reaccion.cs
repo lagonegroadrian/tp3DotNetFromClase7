@@ -17,6 +17,10 @@ namespace Clase7
 
         private static int ultimoValor = 1;
 
+        public int Comentarioid { get; set; }
+        public Comentario Comentario { get; set; }
+
+
         public Reaccion() { }
 
         public Reaccion(String tipo, Post post, Usuario usuario)

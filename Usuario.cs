@@ -20,6 +20,8 @@ namespace Clase7
         public int intentosFallidos { get; set; }
         public bool bloqueado { get; set; }
         public bool esADM { get; set; }
+        public virtual ICollection<UsuarioAmigo> misAmigos { get; set; }
+        public virtual ICollection<UsuarioAmigo> amigosMios { get; set; }
 
         public List<Usuario> amigos;
 

@@ -9,9 +9,14 @@ namespace Clase7
 
     public class Tag
     {
-        public int id;
-        public string palabras;
+        public int id { get; set; }
+        public string palabras { get; set; }
+        
         public List<Post> posts;
+
+        public int Comentarioid { get; set; }
+        public Comentario Comentario { get; set; }
+        
 
         public Tag(){}
     }

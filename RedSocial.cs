@@ -13,6 +13,7 @@ namespace Clase7
     public class RedSocial
     {
         private MyContext contexto;
+        private DbSet<Usuario> misUsuarios;
         private int idLogueado;
         public RedSocial()
         {
@@ -28,6 +29,8 @@ namespace Clase7
                 contexto = new MyContext();
                 //cargo los usuarios
                 //falta reacciones en el include y amigos de usuarios
+                contexto.usuarios.Load();
+                misUsuarios = contexto.usuarios;
                 contexto.usuarios.Include(u => u.posts).Include(u => u.comentarios).Load();
                 contexto.posts.Load();
                 contexto.comentarios.Load();
@@ -125,7 +128,7 @@ namespace Clase7
             Usuario ElUser = contexto.usuarios.Where(u => u.idUsuario == id).FirstOrDefault();
             foreach(Usuario amigo in ElUser.amigos)
             {
-                salida.AddRange(amigo.posts);
+               salida.AddRange(amigo.posts);
             }
             return salida;
         }
