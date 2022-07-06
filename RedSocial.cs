@@ -41,14 +41,14 @@ namespace Clase7
 
             }
         }
-        public Usuario obtenerUsuario(int idUser)
+        public List<List<string>> obtenerUsuario(int idUser)
         {
-            return contexto.usuarios.Where(U => U.idUsuario == idUser).FirstOrDefault();
+            List<List<string>> salida = new List<List<string>>();
+            foreach (Usuario u in contexto.usuarios)
+                salida.Add(new List<string> { u.dni.ToString(), u.nombre, u.mail, u.password, u.esADM.ToString(), u.bloqueado.ToString() });
+            return salida;
         }
-        public List<Usuario> obtenerUsuarios()
-        {
-            return contexto.usuarios.ToList();
-        }
+        
         
         public List<Usuario> usuariosAdministradores()
         {
@@ -126,9 +126,9 @@ namespace Clase7
         {
             List<Post> salida = new List<Post>();
             Usuario ElUser = contexto.usuarios.Where(u => u.idUsuario == id).FirstOrDefault();
-            foreach(Usuario amigo in ElUser.amigos)
+            foreach (Usuario amigo in ElUser.amigos)
             {
-               salida.AddRange(amigo.posts);
+                salida.AddRange(amigo.posts);
             }
             return salida;
         }
@@ -157,6 +157,22 @@ namespace Clase7
                 }
             }
             return null;
+        }
+
+
+
+        public bool AgregarAmigo(int idAmigo, string nombre, string apellido)
+        {
+            try
+            {
+                contexto.usuarios.Include(u => u.misAmigos).ThenInclude(ua => ua.user).
+                Include(u => u.amigosMios).ThenInclude(ua => ua.amigo).Load();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void cerrar()

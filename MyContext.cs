@@ -28,14 +28,41 @@ namespace Clase7
                 .ToTable("Usuarios")
                 .HasKey(u => u.idUsuario);
 
+            modelBuilder.Entity<Post>()
+                .ToTable("Post")
+                .HasKey(p => p.idPost);
+
+            modelBuilder.Entity<Comentario>()
+                .ToTable("Comentario")
+                .HasKey(c => c.id);
+
+            modelBuilder.Entity<Comentario>()
+                .ToTable("Comentario")
+                .HasKey(c => c.id);
+
+            modelBuilder.Entity<Tag>()
+                .ToTable("tag")
+                .HasKey(t => t.id);
+
+            modelBuilder.Entity<Reaccion>()
+                .ToTable("reaccion")
+                .HasKey(r => r.id);
+            modelBuilder.Entity<UsuarioAmigo>()
+                .ToTable("usuarioamigo")
+                .HasKey(u => u.num_usr);
+
+            modelBuilder.Entity<Reaccion>()
+                .ToTable("reaccion")
+                .HasKey(r => r.id);
+
             //==================== RELACIONES============================
             //DEFINICIÓN DE LA RELACIÓN ONE TO ONE USUARIO -> DNI
-         /*    modelBuilder.Entity<dni o DNI>()
-            .HasOne(P => P.usuario)
-            .WithMany(U => U.posts)
-            .HasForeignKey(P => P.idUsuario)
-            .OnDelete(DeleteBehavior.Cascade);
-         */
+            /*    modelBuilder.Entity<dni o DNI>()
+               .HasOne(P => P.usuario)
+               .WithMany(U => U.posts)
+               .HasForeignKey(P => P.idUsuario)
+               .OnDelete(DeleteBehavior.Cascade);
+            */
 
             //DEFINICIÓN DE LA RELACIÓN ONE TO MANY USUARIO -> POST
             modelBuilder.Entity<Post>()
@@ -98,6 +125,54 @@ namespace Clase7
                     usr.Property(u => u.esADM).HasColumnType("bit");
                     usr.Property(u => u.bloqueado).HasColumnType("bit");
                 });
+
+            modelBuilder.Entity<Post>(
+               usr =>
+               {
+                   usr.Property(p => p.idPost).HasColumnType("int");
+                   usr.Property(p => p.contenido).HasColumnType("varchar(512)");
+                   usr.Property(p => p.fecha).HasColumnType("varchar(50)");
+                  
+               });
+
+            modelBuilder.Entity<Tag>(
+              usr =>
+              {
+                  usr.Property(t => t.id).HasColumnType("int");
+                  usr.Property(t => t.palabras).HasColumnType("varchar(512)");
+                  
+
+              });
+
+            modelBuilder.Entity<Amigo>(
+              usr =>
+              {
+                  usr.Property(a => a.idAmigo).HasColumnType("int");
+                  usr.Property(a => a.nombre).HasColumnType("varchar(512)");
+                  usr.Property(a => a.apellido).HasColumnType("varchar(512)");
+
+
+              });
+
+            modelBuilder.Entity<Comentario>(
+              usr =>
+              {
+                  usr.Property(c => c.id).HasColumnType("int");
+                  usr.Property(c => c.contenido).HasColumnType("varchar(512)");
+                  usr.Property(c => c.fecha).HasColumnType("varchar(512)");
+
+
+              });
+
+            modelBuilder.Entity<Reaccion>(
+              usr =>
+              {
+                  usr.Property(r => r.id).HasColumnType("int");
+                  usr.Property(r => r.tipo).HasColumnType("varchar(512)");
+                  usr.Property(r => r.Comentario).HasColumnType("varchar(512)");
+
+
+              });
             //Ignoro, no agrego UsuarioManager a la base de datos
             modelBuilder.Ignore<RedSocial>();
         }
